@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>bangbang</title>
+  <link rel="stylesheet" href="weui.min.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="recomand.css">
+</head>
+<body>
+  <div class="main">
+    <div class="header-bar">
+      <!-- <div class="header_inner"> -->
+        <div class="back"><a href="index.html"><img src="back.png" alt="" /></a></div>
+        <div class="title">靠谱推荐</div>
+      <!-- </div> -->
+    </div>
+    <script type="text/x-handlebars-template" id="recommand-template">
+      <div class="short_area area">
+        <div class="splitbar">靠谱推荐</div>
+      </div>
+      <ul class="recomand_items">
+        {{#each res}}
+        <li class="recomand_item" style="">
+          <div class="img"><img src="user1.png" alt=""></div>
+          <!-- <div class="img"><img src="{{this.profile}}" alt=""></div> -->
+          <div class="user_context">
+            <p><span>{{this.name}}  | </span>{{this.job}}</p>
+            <p class="small">{{this.content}}</p>
+          </div>
+        </li>
+        {{/each}}
+        <!-- <li class="recomand_item">
+          <div class="img"><img src="user2.png" alt=""></div>
+          <div class="user_context">
+            <p><span>张敏  | </span>滴滴产品经理</p>
+            <p class="small">360程序员街舞社, 团队做的衣服，之前就买过</p>
+          </div>
+        </li> -->
+      </ul>
+    </script>
+    <div class="main-body">
+
+
+  </div>
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="handlebars-v3.0.3.js"></script>
+<script src="recommand.js"></script>
+</html>

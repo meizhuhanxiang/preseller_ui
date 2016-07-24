@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>bangbang</title>
+  <link rel="stylesheet" href="weui.min.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="purchase.css">
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header-bar">
+      <!-- <div class="header_inner"> -->
+      <div class="back"><a href="purchase.html"><img src="back.png" alt="" /></a></div>
+      <div class="function">删除</div>
+      <div class="title">我的地址</div>
+      <!-- </div> -->
+    </div>
+    <div class="main-body">
+      <div class="order addresses" style="">
+        <div class="order-inner vertical-middle">
+          <div class="order-detail">
+            <p>
+              <span class="default">【默认】</span><span class="name">范晓宇</span><span class="phone">13552266949</span>
+            </p>
+            <p class="detail">
+              中国 北京市 朝阳区 酒仙桥6号院电子国际总
+            </p>
+          </div>
+          <div class="price vertical-middle">
+            <img src="edit.png" alt="" style="width:0.2rem">
+          </div>
+        </div>
+      </div>
+      <div class="order addresses" style="">
+        <div class="order-inner vertical-middle">
+          <div class="order-detail">
+            <p>
+              <span class="name">李颖</span><span class="phone">18966677772</span>
+            </p>
+            <p class="detail">
+              中国 北京市 朝阳区 酒仙桥6号院电子国际总
+            </p>
+          </div>
+          <div class="price vertical-middle">
+            <img src="edit.png" alt="" style="width:0.2rem">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="order-footer">
+      <div class="order-footer order-detail-footer">
+        添加新地址
+      </div>
+    </div>
+  </div>
+
+</body>
+<script type="text/javascript">
+function refreshRem(){
+  var docEl = window.document.documentElement;
+  var width = docEl.getBoundingClientRect().width;
+  var rootSize = width/720*100;
+  docEl.style.fontSize = rootSize + 'px';
+}
+window.onload = function() {
+  refreshRem();
+}
+</script>
+</html>

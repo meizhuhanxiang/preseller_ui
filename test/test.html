@@ -1,0 +1,26 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="/static/js/jquery-3.1.0.min.js"></script>
+</head>
+<body>
+
+欢迎来到test
+<input type="button" id="test" value="测试请求api接口" onclick='fetch_api();'/>
+<div id="show">
+</div>
+<script type="text/javascript">
+function fetch_api(){
+	 $.ajax({
+	     type: "GET",
+	     url: "/api/commodity/324234242423",
+	     success: function(data){
+			alert("success");
+			$("#show").html(JSON.stringify(data));
+		      }
+ });
+}
+</script>
+</body>
+</html
+

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>bangbang</title>
+  <link rel="stylesheet" href="/static/css/weui.min.css">
+  <link rel="stylesheet" href="/static/css/main.css">
+  <link rel="stylesheet" href="/static/css/detail.css">
+  <!-- <link rel="stylesheet" href="src/css/index.css"> -->
+
+</head>
+<body>
+  <script type="text/x-handlebars-template" id="commodity-template" >
+    <div class="productTitle">
+      <h1 class="title">{{title}}</h1>
+      <div class="sub_wrapper">
+        <div class="in left">
+          <span class="bracket"></span>
+          <span class="line"></span>
+        </div>
+        <h2 class="subheading">{{brief}}</h2>
+        <div class="in right">
+          <span class="bracket"></span>
+          <span class="line"></span>
+        </div>
+      </div>
+    </div>
+    <div class="productImg">
+      <!-- <img src="{{navigation}}" alt=""> -->
+      <img src="title.png" alt="">
+    </div>
+    <div class="product-info">
+      <div class="product-info-title">
+        <div class="line"></div>
+        <div class="product-info-count">
+          <p class="total_count">预售{{presell_count}}件</p>
+          <p class="min_count">满{{satisfy_count}}件发货</p>
+        </div>
+        <div class="product-info-price"><span class="unit">$</span><span class="price">86</span></div>
+      </div>
+
+      <div class="product-info-progress">
+        <div class="progress-wrapper">
+          <div class="progress-inner" style="width={{sold_count}}%"></div>
+        </div>
+        <div class="progress-text">{{sold_count}} / 100</div>
+      </div>
+    </div>
+
+    <div class="product_company area">
+      <!-- <div class="logo"><img src="{{logo}}" alt=""></div> -->
+      <div class="logo"><img src="logo.png" alt=""></div>
+      <div class="company_text">{{publisher}}</div>
+      <div class="instruction">品牌方</div>
+      <div class="arrow">
+        <!-- <img src="arrow.png" alt=""> -->
+      </div>
+    </div>
+
+    <div class="pre_rule area">
+      <div class="splitbar">预售规则</div>
+      <div class="arrow">
+        <!-- <img src="arrow.png" alt=""> -->
+      </div>
+    </div>
+
+    <div class="recomand area">
+      <div class="splitbar">靠谱推荐</div>
+    </div>
+
+    <ul class="recomand_items">
+      {{#each recommends}}
+      <li class="recomand_item" style="">
+        <!-- <div class="img"><img src="{{profile}}" alt=""></div> -->
+        <div class="img"><img src="user2.png" alt=""></div>
+        <div class="user_context">
+          <p><span>{{name}}  | </span>{{job}}</p>
+          <p class="small text-nowrap">{{content}}</p>
+        </div>
+      </li>
+      {{/each}}
+      <!-- <li class="recomand_item">
+        <div class="img"><img src="user2.png" alt=""></div>
+        <div class="user_context">
+          <p><span>张敏  | </span>滴滴产品经理</p>
+          <p class="small text-nowrap">360程序员街舞社, 团队做的衣服，之前就买过...</p>
+        </div>
+      </li> -->
+    </ul>
+    <div class="company-info">
+      <div class="title area">
+        <div class="splitbar">商品信息</div>
+      </div>
+    </div>
+
+  </script>
+  <script type="text/x-handlebars-template" id="purchase-detail-template">
+    <div class="order">
+      <div class="order-inner vertical-middle">
+        <div class="order-img show">
+          <img src="{{navigation_img}}" alt="" />
+          <!-- <input type="checkbox" name="" id=""> -->
+        </div>
+        <div class="order-detail">
+          <p>
+            {{name}}
+          </p>
+          <p class="">
+            <span>￥{{price}}</span>
+          </p>
+        </div>
+        <div class="close">
+          <img src="close.png" alt="">
+        </div>
+      </div>
+    </div>
+
+    {{#each properties}}
+      <div class="choose_type choose_color">
+        <div class="choose_title">
+          {{name}}
+        </div>
+        <div class="choose_items">
+          {{#each type}}
+            {{#compare @index 0}}
+              <div class="choose_item choose">{{this}}</div>
+            {{else}}
+              <div class="choose_item">{{../this}}</div>
+            {{/compare}}
+          <!-- <div class="choose_item">灰色</div> -->
+          {{/each}}
+        </div>
+      </div>
+    {{/each}}
+    <div class="choose_type choose_number">
+      <div class="choose_title">
+        购买数量
+      </div>
+      <div class="choose_items">
+        <div class="operation minus">
+          -
+        </div>
+        <div class="number_show">
+          {{unit}}
+        </div>
+        <div class="operation add">
+          +
+        </div>
+      </div>
+    </div>
+    <a class="order-footer order-detail-footer">
+      确定
+    </a>
+  </script>
+  <div class="main">
+    <div class="main-body">
+
+  </div>
+  <div class="footer">
+    <div class="haha">
+      <div class="tip">5</div>
+    </div>
+    <div class="buttonArea">
+      <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_plain_primary add">加入购物袋</a>
+      <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_plain_primary purchase">立即购买</a>
+    </div>
+  </div>
+  <div class="footer product_detail hide">
+
+  </div>
+</div>
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="/static/js/handlebars-v3.0.3.js"></script>
+<script src="/static/js/main.js"></script>
+</html>

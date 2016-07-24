@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>bangbang</title>
+  <link rel="stylesheet" href="weui.min.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="purchase.css">
+</head>
+<body>
+  <div class="main">
+    <div class="main-body">
+      <div class="productImg">
+          <img src="title.png" alt="">
+      </div>
+      <div class="order">
+        <div class="order-inner vertical-middle">
+          <div class="order-img show">
+            <img src="" alt="" />
+            <!-- <input type="checkbox" name="" id=""> -->
+          </div>
+          <div class="order-detail">
+            <p>
+              G-STEP冬季卫衣
+            </p>
+            <p class="">
+              <span>￥495</span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <div class="choose_type choose_color">
+        <div class="choose_title">
+          颜色
+        </div>
+        <div class="choose_items">
+          <div class="choose_item">黑色</div>
+          <div class="choose_item">灰色</div>
+        </div>
+      </div>
+      <div class="choose_type choose_size">
+        <div class="choose_title">
+          尺码
+        </div>
+        <div class="choose_items">
+          <div class="choose_item">M</div>
+          <div class="choose_item">L</div>
+          <div class="choose_item">XL</div>
+          <div class="choose_item">XXL</div>
+        </div>
+      </div>
+      <div class="choose_type choose_number">
+        <div class="choose_title">
+          购买数量
+        </div>
+        <div class="choose_items">
+          <div class="operation minus">
+            -
+          </div>
+          <div class="number_show">
+            1
+          </div>
+          <div class="operation add">
+            +
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="order-footer order-detail-footer">
+      确定
+    </div>
+  </div>
+
+</body>
+<script type="text/javascript">
+function refreshRem(){
+  var docEl = window.document.documentElement;
+  var width = docEl.getBoundingClientRect().width;
+  var rootSize = width/720*100;
+  docEl.style.fontSize = rootSize + 'px';
+}
+window.onload = function() {
+  refreshRem();
+}
+</script>
+</html>

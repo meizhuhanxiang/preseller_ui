@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>bangbang</title>
+  <link rel="stylesheet" href="weui.min.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="introduction.css">
+</head>
+<body>
+
+<script type="text/x-handlebars-template" id="introduction-template" >
+
+  <div class="productImg">
+    <div class="img_wrapper">
+      <img src="logogstep.png" alt="">
+      <!-- <img src="{{navigation_img}}" alt=""> -->
+    </div>
+
+  </div>
+
+  <div class="short_area area">
+    <div class="splitbar">简介</div>
+  </div>
+  <div class="context_wrapper simple_context_wrapper">
+    <div class="context_inner simple_contxt_inner">
+      {{brief_introduction}}
+    </div>
+  </div>
+  <div class="short_area area">
+    <div class="splitbar">商品怎么保证</div>
+  </div>
+  <div class="context_wrapper simple_context_wrapper">
+    <div class="context_inner simple_contxt_inner">
+       {{guarantee}}
+    </div>
+  </div>
+  <div class="short_area area date">
+    <div class="splitbar">团队日常活动</div>
+  </div>
+
+  <div class="">
+    <img src="play.png" alt="" />
+    {{#each activity_photos}}
+      <img src="{{this}}" alt="" />
+    {{/each}}
+  </div>
+
+</script>
+
+
+  <div class="main">
+    <div class="main-body">
+
+    </div>
+  </div>
+</body>
+
+
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="handlebars-v3.0.3.js"></script>
+<script src="introduction.js"></script>
+</html>

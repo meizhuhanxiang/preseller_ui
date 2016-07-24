@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .wrapper {
+        background-color: red;
+        position: relative;
+      }
+      .man {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 100%;
+      }
+      .wrapper div{
+        display: inline-block;
+        vertical-align: middle;
+        background-color: red;
+      }
+      .wrapper .div1 {
+        background-color: green;
+      }
+      .wrapper .div2 {
+        background-color: blue;
+      }
+      .wrapper .div3 {
+        background-color: #ccc;
+      }
+      #aaa, #bbb {
+        display: none;
+      }
+      /*#aaa:checked ~ label.aaa{
+        color: red;
+        display: none;
+      }
+      #bbb:checked ~ label.bbb{
+        color: red;
+      }*/
+      .aaa {
+        display: inline-block;
+        margin-top: 20px;
+        width: 78px;
+        height: 40px;
+        background-color: #ffb400;
+        border-top-left-radius: 19px 19px;
+        border-top-right-radius: 19px 19px;
+        border-bottom-right-radius: 19px 19px;
+        border-bottom-left-radius: 19px 19px;
+        font-size: 0;
+        background-color: #444;
+      }
+      .aaa span {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-color: #ccc;
+        border-radius: 50%;
+      }
+      #aaa {
+        display: none;
+      }
+      #aaa:checked ~ label.aaa{
+        background-color: #ffb400;
+      }
+      #aaa:checked ~ label.aaa span {
+        margin-left: 50%;
+        background-color: #fff;
+      }
+      .border_demo {
+        width:0;
+        height:0;
+        border:100px solid gray;
+        border-radius:100px;
+        border-right-color:#fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="man">
+
+      </div>
+      <div class="div1">
+        <p>1</p>
+        <p>2</p>
+      </div>
+      <div class="div2">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+      </div>
+      <div class="div3">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+      </div>
+    </div>
+    <div class="inputwrapper">
+      <input type="checkbox" name="a" id="aaa">
+      <label class="aaa" for="aaa">
+        <span></span>
+      </label>
+    </div>
+    <div class="border_demo">
+
+    </div>
+  </body>
+</html>

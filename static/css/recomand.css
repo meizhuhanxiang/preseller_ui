@@ -1,0 +1,15 @@
+.recomand_item {
+  height: auto;
+  font-size: 0;
+}
+.recomand_items {
+  padding-bottom: 0.3rem;
+  background-color: rgba(50, 48, 48, 0.7);
+}
+.user_context {
+  color: #cacaca;
+}
+.user_context .small {
+  line-height: 1.4;
+  color: #cacaca;
+}

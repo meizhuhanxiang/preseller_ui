@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>bangbang</title>
+  <link rel="stylesheet" href="weui.min.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="purchase.css">
+</head>
+<body>
+  <div class="main">
+    <div class="header-bar">
+      <!-- <div class="header_inner"> -->
+      <div class="back"><a href="purchase.html"><img src="back.png" alt="" /></a></div>
+      <div class="function">删除</div>
+      <div class="title">确认订单</div>
+      <!-- </div> -->
+    </div>
+    <div class="main-body">
+      <div class="order" style="">
+        <div class="order-inner vertical-middle">
+          <div class="order-detail">
+            <p>
+              <span class="phone">还没有收货地址，点击添加</span>
+            </p>
+          </div>
+          <div class="price vertical-middle">
+            <img src="arrow.png" alt=""/ style="width:0.2rem">
+          </div>
+        </div>
+      </div>
+      <div class="product_company area">
+        <div class="company_text">共1件商品</div>
+        <div class="arrow"></div>
+      </div>
+      <div class="order order-show" style="display:none;">
+        <div class="order-inner vertical-middle">
+          <div class="order-img show">
+            <img src="" alt="" />
+            <!-- <input type="checkbox" name="" id=""> -->
+          </div>
+          <div class="order-detail">
+            <p>
+              G-STEP冬季卫衣
+            </p>
+            <p class="detail">
+              <span>颜色：灰色</span><span>尺码： XL</span>
+            </p>
+          </div>
+          <div class="price vertical-middle">
+            <p>
+              ￥495.0
+            </p>
+            <p>
+              ×1
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="order yunfei" style="">
+      <div class="order-inner vertical-middle">
+        <div class="order-detail">
+          <span>
+            运费
+          </span>
+        </div>
+        <div class="price vertical-middle">
+          <p>
+            ￥0.00
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="order shouldpay" style="">
+      <div class="order-inner vertical-middle">
+        <div class="price vertical-middle">
+          <p>
+            应付：<span>￥495.00</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="order shouldpay" style="">
+      <div class="order-inner vertical-middle">
+        <div class="">
+          <p>
+            发票
+          </p>
+        </div>
+        <div class="price vertical-middle">
+          <!-- <div class="vertical-middle"> -->
+            <input type="checkbox" name="a" id="aaa">
+            <label class="aaa" for="aaa">
+              <span></span>
+            </label>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="order comment" style="">
+      <div class="order-inner vertical-middle">
+        <div class="commet-context">
+          <p>
+            留言
+          </p>
+        </div>
+        <div class="commet-context">
+          <input type="text" name="" id="">
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="order-footer">
+      <div class="order-footer order-detail-footer">
+        微信支付
+      </div>
+
+    </div>
+  </div>
+
+</body>
+<script type="text/javascript">
+function refreshRem(){
+  var docEl = window.document.documentElement;
+  var width = docEl.getBoundingClientRect().width;
+  var rootSize = width/720*100;
+  docEl.style.fontSize = rootSize + 'px';
+}
+window.onload = function() {
+  refreshRem();
+  var click = document.querySelector(".product_company");
+  var order = document.querySelector(".order.order-show");
+  click.onclick = function() {
+    if (order.style.display == "none") {
+      order.style.display = "block"
+    } else {
+      order.style.display = "none"
+    }
+  }
+}
+</script>
+</html>

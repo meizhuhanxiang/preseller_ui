@@ -1,0 +1,12 @@
+.context_inner {
+  display:block;
+}
+.simple_contxt_inner {
+  color: #cacaca;
+}
+.simple_context_wrapper {
+  background-color: rgba(50, 48, 48, 0.7);
+}
+.short_area.area {
+  background-color: rgba(50, 48, 48, 0.7);
+}
