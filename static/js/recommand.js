@@ -18,7 +18,7 @@ $(document).ready(function() {
   }
   var recommand_tml = Handlebars.compile($("#recommand-template").html());
   ajax_func({
-    url:'http://www.preseller.cn:9888/recomends/324234242423'
+    url:'/api/recomends/324234242423'
   }, function(data) {
     $(".main-body").html(recommand_tml(data));
   })

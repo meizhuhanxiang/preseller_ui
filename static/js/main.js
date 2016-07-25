@@ -28,6 +28,7 @@ $(document).ready(function() {
   })
   var commodity_tml = Handlebars.compile($("#commodity-template").html());
   var purchase_tml = Handlebars.compile($("#purchase-detail-template").html());
+  var purchase_car_tml = Handlebars.compile($("#purchase-car-template").html());
   var ajax_func = function(obj, success) {
     var default_obj = {
       dataType: "json",
@@ -45,6 +46,7 @@ $(document).ready(function() {
   }, function(data) {
     console.log(data);
     $(".main-body").html(commodity_tml(data.res));
+    $(purchase_car_tml({car_count:data.res.cart_count})).prependTo($(".footer"));
     document.querySelector(".in.left").style.width = calWidthForSubheading()-2 + "px";
     document.querySelector(".in.right").style.width = calWidthForSubheading()-2 + "px";
     document.querySelector(".in.left .line").style.width = calcLine()-1 + "px";
@@ -58,6 +60,7 @@ $(document).ready(function() {
     document.querySelector(".recomand.area").onclick = function() {
       window.location.href = "recomand.html"
     }
+
   })
 
 

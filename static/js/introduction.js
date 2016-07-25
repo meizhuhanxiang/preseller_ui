@@ -19,7 +19,7 @@ $(document).ready(function() {
   }
   var introduction_tml = Handlebars.compile($("#introduction-template").html());
   ajax_func({
-    url:'http://www.preseller.cn:9888/publisher/324234242423'
+    url:'/api/publisher/324234242423'
   }, function(data) {
     $(".main-body").html(introduction_tml(data.res));
   })

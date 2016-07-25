@@ -1,7 +1,7 @@
 .main-body .productImg{
   width: 6.6rem;
   height: 2.46rem;
-  background: url('bgc.png');
+  background: url('/static/img/bgc.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
