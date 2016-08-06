@@ -19,7 +19,7 @@ $(document).ready(function() {
   // Stuff to do as soon as the DOM is ready
   refreshRem();
   Handlebars.registerHelper("compare", function(v1, v2, options) {
-    console.log(v1, v2);
+    // console.log(v1, v2);
     if (v1 == v2) {
       return options.fn(this);
     } else {
@@ -105,11 +105,67 @@ $(document).ready(function() {
     $(this).parents(".footer").hide();
     $(".product_detail").removeClass("hide").animate({"bottom":0}, 500);
     if ($(this).hasClass("purchase")) {
-      $(".order-detail-footer").attr("href", "make_order.html");
+      $(".order-detail-footer").removeClass("purchase").addClass("make_order").attr("href", "javascript:;");
     } else {
-      $(".order-detail-footer").attr("href", "purchase.html");
+      $(".order-detail-footer").removeClass("make_order").addClass("purchase").attr("href", "javascript:;");
+      
     }
   });
+
+  $(".footer").on("click", ".purchase", function() {
+    var $this = $(this);
+    var data = {};
+    data.properties = [];
+    $(".choose_property").each(function(index, ele) {
+      console.log(ele);
+      var choose_items = $(ele).find(".choose_items");
+      var name = choose_items.data("name");
+      var type = choose_items.find(".choose").text();
+      data.properties.push({
+        name: name,
+        type: type
+      })
+
+    })
+    ajax_func({
+      "url": '/api/purchase_confirm/324234242423',
+      type: "POST",
+      data: data
+    }, function(data) {
+      console.log(data);
+      
+    })
+  })
+
+  $(".footer").on("click", ".make_order", function() {
+    var $this = $(this);
+    var data = {};
+    data.properties = [];
+    $(".choose_property").each(function(index, ele) {
+      console.log(ele);
+      var choose_items = $(ele).find(".choose_items");
+      var name = choose_items.data("name");
+      var type = choose_items.find(".choose").text();
+      data.properties.push({
+        name: name,
+        type: type
+      })
+
+    })
+    ajax_func({
+      "url": '/api/purchase_confirm/324234242423',
+      type: "POST",
+      data: data
+    }, function(data) {
+      console.log(data);
+      console.log("make_order.html?order=" + data.res.code);
+      window.location.href = "make_order.html?order=" + data.res.code;
+    })
+  })
+
+  $(".footer").on("click", ".haha", function() {
+    window.location.href = "purchase.html"
+  })
   $(".footer.product_detail").on("click", ".close", function() {
     $(this).parents(".product_detail").addClass("hide").animate({"bottom":"-100%"}, 500);
     $(".footer").show();
