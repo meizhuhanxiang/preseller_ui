@@ -1,3 +1,5 @@
+var SEED_ID = "324234242423";
+var cart_id = [];
 function refreshRem(){
   var docEl = window.document.documentElement;
   var width = docEl.getBoundingClientRect().width;
@@ -65,7 +67,7 @@ $(document).ready(function() {
 
 
   ajax_func({
-    url:'/api/purchase_detail/324234242423'
+    url:'/api/purchase/detail/324234242423'
   }, function(data) {
     $(".footer.product_detail").html(purchase_tml(data.res));
   })
@@ -101,7 +103,7 @@ $(document).ready(function() {
 
 
 
-  $(".footer .purchase, .footer .buttonArea .add").on("click", function() {
+  $(".footer .purchase, .footer .buttonArea a").on("click", function() {
     $(this).parents(".footer").hide();
     $(".product_detail").removeClass("hide").animate({"bottom":0}, 500);
     if ($(this).hasClass("purchase")) {
@@ -112,7 +114,7 @@ $(document).ready(function() {
     }
   });
 
-  $(".footer").on("click", ".purchase", function() {
+  $(".footer").on("click", ".order-detail-footer.purchase", function() {
     var $this = $(this);
     var data = {};
     data.properties = [];
@@ -121,6 +123,9 @@ $(document).ready(function() {
       var choose_items = $(ele).find(".choose_items");
       var name = choose_items.data("name");
       var type = choose_items.find(".choose").text();
+      var count = parseInt($(".number_show").text());
+      data.count = count;
+      data.seed_id = SEED_ID;
       data.properties.push({
         name: name,
         type: type
@@ -128,16 +133,17 @@ $(document).ready(function() {
 
     })
     ajax_func({
-      "url": '/api/purchase_confirm/324234242423',
+      "url": '/api/cart/add/' + SEED_ID,
       type: "POST",
       data: data
     }, function(data) {
-      console.log(data);
-      
+      $("div.haha .tip").text(data.res.cart_count);
+      cart_id.push(data.res.cart_id);
+      $(".close").click();
     })
   })
 
-  $(".footer").on("click", ".make_order", function() {
+  $(".footer").on("click", ".order-detail-footer.make_order", function() {
     var $this = $(this);
     var data = {};
     data.properties = [];
@@ -146,6 +152,7 @@ $(document).ready(function() {
       var choose_items = $(ele).find(".choose_items");
       var name = choose_items.data("name");
       var type = choose_items.find(".choose").text();
+      var count = parseInt($(".number_show").text());
       data.properties.push({
         name: name,
         type: type
@@ -159,12 +166,13 @@ $(document).ready(function() {
     }, function(data) {
       console.log(data);
       console.log("make_order.html?order=" + data.res.code);
-      window.location.href = "make_order.html?order=" + data.res.code;
+      window.location.href = encodeURI("make_order.html?order=" + data.res.code);
     })
   })
 
   $(".footer").on("click", ".haha", function() {
-    window.location.href = "purchase.html"
+    var param = JSON.stringify(cart_id);
+    window.location.href = "purchase.html?cart_id=" + param
   })
   $(".footer.product_detail").on("click", ".close", function() {
     $(this).parents(".product_detail").addClass("hide").animate({"bottom":"-100%"}, 500);

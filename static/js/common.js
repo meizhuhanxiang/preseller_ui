@@ -22,3 +22,9 @@ if (Handlebars) {
 		return Handlebars.compile($(tml_name).html());
 	}
 }
+function refreshRem(){
+  var docEl = window.document.documentElement;
+  var width = docEl.getBoundingClientRect().width;
+  var rootSize = width/720*100;
+  docEl.style.fontSize = rootSize + 'px';
+}

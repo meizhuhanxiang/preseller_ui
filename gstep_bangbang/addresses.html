@@ -11,79 +11,11 @@
 </head>
 <body>
   <div class="main">
-    <div class="header-bar">
-      <!-- <div class="header_inner"> -->
-      <div class="back"><a href="purchase.html"><img src="/static/img/back.png" alt="" /></a></div>
-      <div class="function">删除</div>
-      <div class="title">我的地址</div>
-      <!-- </div> -->
-    </div>
-    <div class="main-body">
-<!--       <div class="order addresses" style="">
-        <div class="order-inner vertical-middle">
-          <div class="order-detail">
-            <p>
-              <span class="default">【默认】</span><span class="name">范晓宇</span><span class="phone">13552266949</span>
-            </p>
-            <p class="detail">
-              中国 北京市 朝阳区 酒仙桥6号院电子国际总
-            </p>
-          </div>
-          <div class="price vertical-middle">
-            <img src="/static/img/edit.png" alt="" style="width:0.2rem">
-          </div>
-        </div>
-      </div>
-      <div class="order addresses" style="">
-        <div class="order-inner vertical-middle">
-          <div class="order-detail">
-            <p>
-              <span class="name">李颖</span><span class="phone">18966677772</span>
-            </p>
-            <p class="detail">
-              中国 北京市 朝阳区 酒仙桥6号院电子国际总
-            </p>
-          </div>
-          <div class="price vertical-middle">
-            <img src="/static/img/edit.png" alt="" style="width:0.2rem">
-          </div>
-        </div>
-      </div> -->
-    </div>
-    <div class="order-footer">
-      <div class="order-footer order-detail-footer add_new_address">
-        添加新地址
-      </div>
-    </div>
+    
   </div>
 
 </body>
-<script type="text/x-handlebars-template" id="address-template">
-  {{#each res}}
-    
-    <div class="order addresses" style="">
-      <div class="order-inner vertical-middle">
-        <div class="order-detail">
-          <p>
-          {{#if this.default}}
-            <span class="default">【默认】</span><span class="name">{{this.name}}</span><span class="phone">{{this.phone}}</span>
-          {{else}}
-            <span class="name">{{this.name}}</span><span class="phone">{{this.phone}}</span>
-          {{/if}}
-          </p>
-          <p class="detail">
-            {{this.country}} {{this.province}} {{this.region}} {{this.address}}
-          </p>
-        </div>
-        <div class="price vertical-middle">
-          <img src="/static/img/edit.png" alt="" style="width:0.2rem">
-        </div>
-      </div>
-    </div>
-    
-  {{/each}}
-  
-</script>
+
 <script type="text/javascript">
 
 

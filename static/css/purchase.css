@@ -28,7 +28,7 @@
   height: 0.6rem;
   line-height: 0.6rem;
 }
-.order.comment input {
+.main.make_order .order.comment input {
   width: 5.7rem;
   height: 0.6rem;
   margin-left: 0.3rem;
@@ -415,4 +415,7 @@
 
 .weui_dialog {
   font-size: 0.18rem;
+}
+.hide {
+  display: none;
 }
