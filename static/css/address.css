@@ -2,7 +2,7 @@
 	width: 1.6rem;
 }
 
-.order.comment input,  .order.comment select{
+.new_addresses .order.comment input,  .order.comment select{
     width: 4.6rem;;
     height: 0.6rem;
     margin-left: 0.3rem;

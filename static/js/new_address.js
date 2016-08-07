@@ -25,7 +25,7 @@ $(document).ready(function() {
 			address: address
 		}
 		ajax_func({
-			url: "/api/ddl_addresses/",
+			url: "/api/address/ddl",
 			type: "POST",
 			data: data
 		}, function(data) {

@@ -35,7 +35,7 @@ h1 {
   overflow-y: scroll;
   width: 100%;
 }
-.main-body {
+.main.pre_index .main-body {
   padding-left: 0.3rem;
   padding-right: 0.3rem;
 }
@@ -260,7 +260,7 @@ h1 {
   width: 0.6rem;
   height: 0.6rem;
 }
-.product_company .company_text {
+.main.pre_index .product_company .company_text {
   font-size: 0.26rem;
   color: #fff;
   position: absolute;

@@ -2,8 +2,8 @@ $(document).ready(function() {
   $(".order.addresses").on("click", function() {
     $(".main.addresses").removeClass("hide").siblings().addClass("hide");
   })
-  var click = document.querySelector(".product_company");
-  var order = document.querySelector(".order.order-show");
+  var click = document.querySelector(".order_show_wrapper");
+  var order = document.querySelector(".order-show");
   click.onclick = function() {
       if (order.style.display == "none") {
         order.style.display = "block"
@@ -11,20 +11,7 @@ $(document).ready(function() {
         order.style.display = "none"
       }
     }
-    // var ajax_func = function(obj, success) {
-    //   var default_obj = {
-    //     dataType: "json",
-    //     type: "GET",
-    //     data: {}
-    //   }
-    //   var obj = $.extend({}, default_obj, obj);
-    //   obj.success = success
-    //   $.ajax(obj)
-    // }
-    // var recommand_tml = Handlebars.compile($("#recommand-template").html());
-    // ajax_func({
-    //   url:'/api/recomends/324234242423'
-    // }, function(data) {
-    //   $(".main-body").html(recommand_tml(data));
-    // })
+  // var params = JSON.parse(decodeURI(location.href).split("?")[1].split("=")[1]);
+  var make_order_tml = compile_tml("#makeOrder-template");
+  // console.log(params);
 })
