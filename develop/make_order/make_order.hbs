@@ -1,0 +1,30 @@
+{{#each res}}
+
+<div class="order" data-cart="{{this.cart_id}}">
+  <div class="order-inner vertical-middle">
+    <div class="order-img show">
+      <img src="" alt="" />
+      <!-- <input type="checkbox" name="" id=""> -->
+    </div>
+    <div class="order-detail">
+      <p>
+        G-STEP冬季卫衣
+      </p>
+      <p class="detail">
+        {{#each this.properties}}
+        <span>{{this.name}}: {{this.type}}</span>
+        {{/each}}
+      </p>
+    </div>
+    <div class="price vertical-middle">
+      <p>
+        ￥{{this.price}}
+      </p>
+      <p>
+        ×{{this.count}}
+      </p>
+    </div>
+  </div>
+</div>
+
+{{/each}}

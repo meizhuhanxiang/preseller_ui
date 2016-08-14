@@ -1,12 +1,12 @@
 $(document).ready(function() {
-	var address_tml = compile_tml("#address-template");
+	var address_tml = gstep.templates.address;
 	ajax_func({
 		url: '/api/addresses/'
 	}, function(data) {
 		$(".main.addresses .main-body").html(address_tml(data));
 	});
 	var new_address = $(".main.new_addresses");
-	$(".add_new_address").on("click", function(	) {
+	$(".add_new_address").on("click", function() {
 		new_address.removeClass("hide").siblings().addClass("hide");
 	});
 	var make_order = $(".main.make_order");
@@ -30,7 +30,7 @@ $(document).ready(function() {
 			data.res.forEach(function(ele) {
 				console.log(ele.address_id, address_id)
 				if (ele.address_id == address_id) {
-					
+
 					edit_address.find("input.name").val(ele.name);
 					edit_address.find("input.name").data("id", address_id);
 					edit_address.find("input.phone").val(ele.phone);
@@ -80,7 +80,7 @@ $(document).ready(function() {
 				$(".main.addresses .main-body").html(address_tml(data));
 				addresses.removeClass("hide").siblings().addClass("hide");
 			});
-			
+
 		})
 	});
 
@@ -113,4 +113,4 @@ $(document).ready(function() {
 			$('#dialog_address').off('click').hide();
 		});
 	})
-})	
+})

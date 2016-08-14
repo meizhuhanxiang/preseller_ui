@@ -1,0 +1,41 @@
+ {{#each res}}
+
+ <div class="order" data-cart="{{this.cart_id}}" data-seed="{{this.seed_id}}" data-total="{{this.total_price}}">
+  <div class="order-inner vertical-middle">
+    <div class="">
+      <!-- <input type="checkbox" name="" id=""> -->
+      <div class="checkbox checksimple">
+        <img src="" alt="" />
+      </div>
+      <!-- <input type="checkbox" name="" id=""> -->
+    </div>
+    <div class="order-img">
+      <img src="" alt="" />
+      <!-- <input type="checkbox" name="" id=""> -->
+    </div>
+    <div class="order-detail">
+      <p>
+        G-STEP冬季卫衣
+      </p>
+      <p class="detail">
+        {{#each this.properties}}
+        <span>{{this.name}}: {{this.type}}</span>
+        {{/each}}
+      </p>
+    </div>
+    <div class="price vertical-middle">
+      <p>
+        ￥{{this.price}}
+      </p>
+      <p>
+        ×{{this.count}}
+      </p>
+      <p class="close_order">
+        <img src="/static/img/close.png" alt="" />
+      </p>
+    </div>
+  </div>
+
+</div>
+
+{{/each}}

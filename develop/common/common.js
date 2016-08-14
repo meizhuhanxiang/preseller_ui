@@ -18,7 +18,4 @@ if (Handlebars) {
 			return options.inverse(this);
 		}
 	})
-	var compile_tml = function(tml_name) {
-		return Handlebars.compile($(tml_name).html());
-	}
 }

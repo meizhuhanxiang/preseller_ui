@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	var address_tml = compile_tml("#address-template");
+	var address_tml = gstep.templates.address;
 	$("#distpicker_new").distpicker({
 		province: "北京市",
 		city: "北京市市辖区",

@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	var choose_cart_ids = [];
-	var make_order_tml = compile_tml("#makeOrder-template");
+	var make_order_tml = gstep.templates.make_order;
 	var main_purchase = $(".main.purchase");
 	main_purchase.on('click', '.close_order', function() {
 		var $this = $(this);
@@ -38,7 +38,7 @@ $(document).ready(function() {
 			} else {
 				$(this).addClass("choose_checkobx");
 			}
-			
+
 		} else {
 			$(this).find("img").attr("src", "");
 			if ($(this).hasClass("checkall")) {
@@ -48,7 +48,7 @@ $(document).ready(function() {
 				$(".checkall").find("img").attr("src", "");
 				$(this).removeClass("choose_checkobx");
 			}
-			
+
 		}
 		var total = 0;
 		choose_cart_ids = [];
@@ -57,10 +57,10 @@ $(document).ready(function() {
 			var item = $(ele).parents(".order")
 			var price = item.data("total");
 			total = total + parseInt(price);
-			choose_cart_ids.push(item.data("cart").toString()); 
+			choose_cart_ids.push(item.data("cart").toString());
 		})
 		console.log(number, total, choose_cart_ids);
-		
+
 
 		$(".final_choose_number").text(number);
 		$(".total_price").text(total);

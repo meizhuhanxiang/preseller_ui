@@ -1,0 +1,23 @@
+{{#each res}}
+
+  <div class="order addresses" style="">
+    <div class="order-inner vertical-middle">
+      <div class="order-detail aaddress-detail" data-id="{{address_id}}">
+        <p>
+          {{#if this.default}}
+          <span class="default">【默认】</span><span class="name">{{this.name}}</span><span class="phone">{{this.phone}}</span>
+          {{else}}
+          <span class="name">{{this.name}}</span><span class="phone">{{this.phone}}</span>
+          {{/if}}
+        </p>
+        <p class="detail">
+          {{this.country}} {{this.province}} {{this.region}} {{this.address}}
+        </p>
+      </div>
+      <div class="price vertical-middle">
+        <img src="/static/img/edit.png" alt="" style="width:0.2rem" class="address_edit">
+      </div>
+    </div>
+  </div>
+
+{{/each}}
