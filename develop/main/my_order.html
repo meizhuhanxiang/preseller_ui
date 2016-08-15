@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>bangbang</title>
+  <link rel="stylesheet" href="weui.min.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="purchase.css">
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+  <div class="main">
+    <div class="header-bar">
+      <!-- <div class="header_inner"> -->
+      <div class="back"><img src="back.png" alt="" /></div>
+      <div class="function">售后</div>
+      <div class="title">我的订单</div>
+      <!-- </div> -->
+    </div>
+    <div class="main-body">
+      <div class="tablist">
+        <ul class="tabs">
+          <li class="tab all">
+            <div class="tab_text">全部</div>
+            <div class="tab_bottom choose"></div>
+          </li>
+          <li class="tab wait_pay">
+            <div class="tab_text">待付款</div>
+            <div class="tab_bottom"></div>
+          </li>
+          <li class="tab wait_send">
+            <div class="tab_text">待发货</div>
+            <div class="tab_bottom"></div>
+          </li>
+          <li class="tab wait_receive">
+            <div class="tab_text">待收货</div>
+            <div class="tab_bottom"></div>
+          </li>
+        </ul>
+      </div>
+      <script type="text/x-handlebars-template" id="order-template">
+        {{#each res}}
+        <div class="order_wrapper">
+          <div class="order-info">
+            {{#compare order_status "complete"}}
+            <div class="order-info-price status">已完成</div>
+            {{/compare}}
+            {{#compare order_status "wait_pay"}}
+            <div class="order-info-price status">未付款</div>
+            {{/compare}}
+            {{#compare order_status "wait_send"}}
+            <div class="order-info-price status">待发货</div>
+            {{/compare}}
+            {{#compare order_status "wait_receive"}}
+            <div class="order-info-price status">待收货</div>
+            {{/compare}}
+            {{#compare order_status "close"}}
+            <div class="order-info-price status">已关闭</div>
+            {{/compare}}
+            <div class="order-info-number">订单编号：{{code}}</div>
+          </div>
+          <div class="order">
+            <div class="order-inner vertical-middle">
+              <div class="order-img show">
+                <img src="" alt="" />
+                <!-- <input type="checkbox" name="" id=""> -->
+              </div>
+              <div class="order-detail">
+                <p>
+                  {{name}}
+                </p>
+                <p class="detail">
+                  {{#each properties}}
+                    <span>{{name}}: {{type}}</span>
+                  {{/each}}
+                  <!-- <span>颜色：灰色</span><span>尺码： XL</span> -->
+                </p>
+              </div>
+              <div class="price vertical-middle">
+                <p>
+                  ￥{{price}}
+                </p>
+                {{#if count}}
+                  <p>
+                    ×{{count}}
+                  </p>
+                {{else}}
+                <p>
+                  ×1
+                </p>
+                {{/if}}
+              </div>
+            </div>
+          </div>
+
+          {{#compare order_status "complete"}}
+          <div class="order-info">
+            <div class="order-info-price">已付：￥{{price}}</div>
+            <div class="order-info-number">共{{count}}件商品</div>
+          </div>
+          <div class="order-info">
+            <div class="buttons"><div class="button">删除订单</div></div>
+          </div>
+          {{/compare}}
+          {{#compare order_status "close"}}
+          <div class="order-info">
+            <div class="order-info-price">已付：￥{{price}}</div>
+            <div class="order-info-number">共{{count}}件商品</div>
+          </div>
+          <div class="order-info">
+            <div class="buttons"><div class="button">删除订单</div></div>
+          </div>
+          {{/compare}}
+          {{#compare order_status "wait_pay"}}
+          <div class="order-info">
+            <div class="order-info-price">未付：￥{{price}}</div>
+            <div class="order-info-number">共{{count}}件商品</div>
+          </div>
+          <div class="order-info">
+            <div class="info timeout">29分44秒关闭</div>
+            <div class="buttons"><div class="button">取消订单</div><div class="button highlight">去付款</div></div>
+          </div>
+          {{/compare}}
+          {{#compare order_status "wait_send"}}
+          <div class="order-info">
+            <div class="order-info-price">已付：￥495.00</div>
+            <div class="order-info-number">共1件商品</div>
+          </div>
+          <div class="order-info-progress">
+            <div class="order-info-detail">
+              <span class="status">预售进行中</span><span class="tip">{{satisfy_count}}件发货</span>
+            </div>
+            <div class="product-info-progress">
+              <div class="progress-wrapper progress_highlight" >
+                <div class="progress-inner progress_highlight" style="width:{{#percent sold_count presell_count}}{{/percent}}"></div>
+              </div>
+              <div class="progress-text progress_highlight">{{sold_count}} / {{presell_count}}</div>
+            </div>
+          </div>
+          {{/compare}}
+          {{#compare order_status "wait_receive"}}
+          <div class="order-info">
+            <div class="order-info-price">已付：￥495.00</div>
+            <div class="order-info-number">共1件商品</div>
+          </div>
+          <div class="order-info">
+            <div class="info"><div class="wuliu">物流信息</div><p class="">
+              {{logistics_info}}
+            </p></div>
+            <div class="buttons"><div class="button">删除订单</div></div>
+          </div>
+          {{/compare}}
+        </div>
+        {{/each}}
+      </script>
+      <div class="tab-contents">
+        <div class="tab-content all">
+          <!-- <div class="order_wrapper">
+            <div class="order-info">
+              <div class="order-info-price status">交易关闭</div>
+              <div class="order-info-number">订单编号：123465789542525</div>
+            </div>
+            <div class="order">
+              <div class="order-inner vertical-middle">
+                <div class="order-img show">
+                  <img src="" alt="" />
+                </div>
+                <div class="order-detail">
+                  <p>
+                    G-STEP冬季卫衣
+                  </p>
+                  <p class="detail">
+                    <span>颜色：灰色</span><span>尺码： XL</span>
+                  </p>
+                </div>
+                <div class="price vertical-middle">
+                  <p>
+                    ￥495.0
+                  </p>
+                  <p>
+                    ×1
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="order-info">
+              <div class="order-info-price">已付：￥495.00</div>
+              <div class="order-info-number">共1件商品</div>
+            </div>
+            <div class="order-info">
+              <div class="buttons"><div class="button">删除订单</div></div>
+            </div>
+          </div> -->
+        </div>
+        <div class="tab-content wait_pay">
+          <!-- <div class="order_wrapper">
+            <div class="order-info">
+              <div class="order-info-price status">未付款</div>
+              <div class="order-info-number">订单编号：123465789542525</div>
+            </div>
+            <div class="order">
+              <div class="order-inner vertical-middle">
+                <div class="order-img show">
+                  <img src="" alt="" />
+                </div>
+                <div class="order-detail">
+                  <p>
+                    G-STEP冬季卫衣
+                  </p>
+                  <p class="detail">
+                    <span>颜色：灰色</span><span>尺码： XL</span>
+                  </p>
+                </div>
+                <div class="price vertical-middle">
+                  <p>
+                    ￥495.0
+                  </p>
+                  <p>
+                    ×1
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="order-info">
+              <div class="order-info-price">已付：￥495.00</div>
+              <div class="order-info-number">共1件商品</div>
+            </div>
+            <div class="order-info">
+              <div class="info timeout">29分44秒关闭</div>
+              <div class="buttons"><div class="button">取消订单</div><div class="button highlight">去付款</div></div>
+            </div>
+          </div> -->
+        </div>
+        <div class="tab-content wait_send">
+          <!-- <div class="order_wrapper">
+            <div class="order-info">
+              <div class="order-info-price status">已付款</div>
+              <div class="order-info-number">订单编号：123465789542525</div>
+            </div>
+            <div class="order">
+              <div class="order-inner vertical-middle">
+                <div class="order-img show">
+                  <img src="" alt="" />
+                </div>
+                <div class="order-detail">
+                  <p>
+                    G-STEP冬季卫衣
+                  </p>
+                  <p class="detail">
+                    <span>颜色：灰色</span><span>尺码： XL</span>
+                  </p>
+                </div>
+                <div class="price vertical-middle">
+                  <p>
+                    ￥495.0
+                  </p>
+                  <p>
+                    ×1
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="order-info">
+              <div class="order-info-price">已付：￥495.00</div>
+              <div class="order-info-number">共1件商品</div>
+            </div>
+            <div class="order-info-progress">
+              <div class="order-info-detail">
+                <span class="status">预售进行中</span><span class="tip">100件发货</span>
+              </div>
+              <div class="product-info-progress">
+                <div class="progress-wrapper progress_highlight">
+                  <div class="progress-inner progress_highlight"></div>
+                </div>
+                <div class="progress-text progress_highlight">68 / 100</div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+        <div class="tab-content wait_receive">
+          <!-- <div class="order_wrapper">
+            <div class="order-info">
+              <div class="order-info-price status">已发货</div>
+              <div class="order-info-number">订单编号：123465789542525</div>
+            </div>
+            <div class="order">
+              <div class="order-inner vertical-middle">
+                <div class="order-img show">
+                  <img src="" alt="" />
+                </div>
+                <div class="order-detail">
+                  <p>
+                    G-STEP冬季卫衣
+                  </p>
+                  <p class="detail">
+                    <span>颜色：灰色</span><span>尺码： XL</span>
+                  </p>
+                </div>
+                <div class="price vertical-middle">
+                  <p>
+                    ￥495.0
+                  </p>
+                  <p>
+                    ×1
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="order-info">
+              <div class="order-info-price">已付：￥495.00</div>
+              <div class="order-info-number">共1件商品</div>
+            </div>
+            <div class="order-info">
+              <div class="info"><div class="wuliu">物流信息</div><p class="">
+                申通：123467945145
+              </p></div>
+              <div class="buttons"><div class="button">删除订单</div></div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="handlebars-v3.0.3.js"></script>
+<script src="my_order.js"></script>
+</html>

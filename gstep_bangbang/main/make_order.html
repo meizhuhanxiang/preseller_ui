@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>bangbang</title>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded',function(){
+     // refreshRem();
+     var docEl = window.document.documentElement;
+     var width = docEl.getBoundingClientRect().width;
+     var rootSize = width/720*100;
+     docEl.style.fontSize = rootSize + 'px';
+   },false);
+  </script>
+  <link rel="stylesheet" href="/static/css/weui.min.css">
+  <link rel="stylesheet" href="/static/css/main.css?v=1">
+  <link rel="stylesheet" href="/static/css/purchase.css">
+  <link rel="stylesheet" href="/static/css/address.css">
+  <link rel="stylesheet" href="/static/css/detail.css">
+
+  
+</head>
+<body>
+  
+  <div class="main pre_index">
+    <div class="main-body">
+
+    </div>
+    <div class="footer button_active">
+      <div class="haha">
+        <div class="tip">5</div>
+      </div>
+      <div class="buttonArea">
+        <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_plain_primary show_detail add_to_cart">加入购物袋</a>
+        <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_plain_primary show_detail purchase_to_order">立即购买</a>
+      </div>
+    </div>
+    <div class="footer product_detail hide">
+
+    </div>
+  </div>
+
+  <div class="main purchase hide">
+    <div class="header-bar">
+      <!-- <div class="header_inner"> -->
+      <div class="back"><a href="javascript:;"><img src="/static/img/back.png" alt="" /></a></div>
+      <div class="function"></div>
+      <div class="title">购物袋</div>
+      <!-- </div> -->
+    </div>
+    <div class="main-body">
+    </div>
+    <div class="order-footer">
+      <div class="order-inner vertical-middle">
+        <div class="choose">
+          <!-- <input type="checkbox" name="" id=""> <span>全选</span> -->
+          <div class="checkbox checkall"><img src="" alt="" /></div><span>全选</span>
+        </div>
+        <div class="order-detail">
+
+        </div>
+        <div class="price vertical-middle">
+          <div class="price-detail">
+            <p>
+              合计：￥<span class="total_price"></span>
+            </p>
+            <p class="detail">
+              已选<span class="final_choose_number"></span>件 不包含运费
+            </p>
+          </div>
+          <div class="">
+            <a href="javascript:;" class="weui_btn weui_btn_mini weui_btn_plain_primary purchase final_purchase">立即购买</a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="weui_dialog_confirm" id="dialog1" style="display: none;">
+      <div class="weui_mask"></div>
+      <div class="weui_dialog">
+        <div class="weui_dialog_hd"><strong class="weui_dialog_title">删除商品</strong></div>
+        <div class="weui_dialog_bd">确定要删除商品吗？</div>
+        <div class="weui_dialog_ft">
+          <a href="javascript:;" class="weui_btn_dialog default">取消</a>
+          <a href="javascript:;" class="weui_btn_dialog cart delete">确定</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main make_order hide">
+    <div class="header-bar">
+      <!-- <div class="header_inner"> -->
+      <div class="back"><a href="javascript:;"><img src="/static/img/back.png" alt="" /></a></div>
+      <div class="function">删除</div>
+      <div class="title">确认订单</div>
+      <!-- </div> -->
+    </div>
+    <div class="main-body">
+      <div class="order addresses" style="">
+        <div class="order-inner vertical-middle">
+          <div class="order-detail">
+            <p>
+              <span class="name">范晓宇</span><span class="phone">13552266949</span>
+            </p>
+            <p class="detail">
+              中国 北京市 朝阳区 酒仙桥6号院电子国际总
+            </p>
+          </div>
+          <div class="price vertical-middle">
+            <img src="/static/img/arrow.png" alt="" style="width:0.2rem">
+          </div>
+        </div>
+      </div>
+      <div class="order order_show_wrapper" style="">
+        <div class="order-inner vertical-middle">
+          <div class="order-detail">
+            共<span class="order_total_number"></span>件商品
+          </div>
+          <div class="price vertical-middle">
+            <img src="/static/img/arrow.png" alt="" style="width:0.2rem">
+          </div>
+        </div>
+      </div>
+      <div class="order-show"></div>
+      
+      <div class="order yunfei" style="">
+        <div class="order-inner vertical-middle">
+          <div class="order-detail">
+            <span>
+              运费
+            </span>
+          </div>
+          <div class="price vertical-middle">
+            <p>
+              ￥0.00
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="order shouldpay" style="">
+        <div class="order-inner vertical-middle">
+          <div class="price vertical-middle">
+            <p>
+              应付：￥<span class="order_total_price">495.00</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="order comment" style="">
+        <div class="order-inner vertical-middle">
+          <div class="commet-context">
+            <p>
+              留言
+            </p>
+          </div>
+          <div class="commet-context">
+            <input type="text" name="" id="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="order-footer">
+      <div class="order-footer order-detail-footer">
+        微信支付
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="main addresses hide">
+    <div class="header-bar">
+      <!-- <div class="header_inner"> -->
+      <div class="back"><a href="javascript:;"><img src="/static/img/back.png" alt="" /></a></div>
+      <div class="function">删除</div>
+      <div class="title">我的地址</div>
+      <!-- </div> -->
+    </div>
+    <div class="main-body">
+    </div>
+    <div class="order-footer">
+      <div class="order-footer order-detail-footer add_new_address">
+        添加新地址
+      </div>
+    </div>
+  </div>
+
+
+  <div class="main new_addresses hide">
+    <div class="header-bar">
+      <!-- <div class="header_inner"> -->
+      <div class="back"><a href="javascript:;"><img src="/static/img/back.png" alt="" /></a></div>
+      <div class="title">编辑地址</div>
+      <!-- </div> -->
+    </div>
+    <div class="main-body">
+
+      <div class="order comment" style="">
+        <div class="order-inner vertical-middle">
+          <div class="commet-context name-title">
+            <p>
+              姓名：
+            </p>
+          </div>
+          <div class="input-context commet-context">
+            <input class="name" type="text" name="" id="">
+          </div>
+        </div>
+      </div>
+
+      <div class="order comment" style="">
+        <div class="order-inner vertical-middle">
+          <div class="commet-context name-title">
+            <p>
+              手机号码：
+            </p>
+          </div>
+          <div class="input-context commet-context">
+            <input class="phone" type="text" name="" id="">
+          </div>
+        </div>
+      </div>
+      <div id="distpicker_new">
+        <div class="order comment" style="">
+          <div class="order-inner vertical-middle">
+            <div class="commet-context name-title">
+              <p>
+                请选择省份：
+              </p>
+            </div>
+            <div class="input-context commet-context province">
+              <select></select>
+            </div>
+          </div>     
+        </div>
+        <div class="order comment" style="">
+          <div class="order-inner vertical-middle">
+            <div class="commet-context name-title">
+              <p>
+                请选择地市：
+              </p>
+            </div>
+            <div class="input-context commet

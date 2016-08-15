@@ -4,15 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
   <title>bangbang</title>
-  <link rel="stylesheet" href="weui.min.css">
-  <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="pre_rule.css">
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded',function(){
+     // refreshRem();
+     var docEl = window.document.documentElement;
+     var width = docEl.getBoundingClientRect().width;
+     var rootSize = width/720*100;
+     docEl.style.fontSize = rootSize + 'px';
+   },false);
+  </script>
+  <link rel="stylesheet" href="/static/css/weui.min.css">
+  <link rel="stylesheet" href="/static/css/main-7894cecf29.css">
+  <link rel="stylesheet" href="/static/css/pre_rule.css">
 </head>
 <body>
   <div class="main">
     <div class="header-bar">
       <!-- <div class="header_inner"> -->
-      <div class="back"><a href="index.html"><img src="back.png" alt="" /></a></div>
+      <div class="back"><a href="make_order.html"><img src="/static/img/back.png" alt="" /></a></div>
       <div class="title">预售规则</div>
       <!-- </div> -->
     </div>
@@ -22,7 +31,7 @@
       </div>
       <div class="context_wrapper simple_context_wrapper">
         <div class="context_inner simple_contxt_inner">
-          台湾当局12日在桃园等地区破获以“发哥”为首的卖淫集团，该集团为求“新鲜感”，每15天换一批大陆年轻女子
+          
         </div>
       </div>
       <div class="short_area area">
@@ -44,16 +53,4 @@
     </div>
   </div>
 </body>
-<script type="text/javascript">
-function refreshRem(){
-  var docEl = window.document.documentElement;
-  var width = docEl.getBoundingClientRect().width;
-  var rootSize = width/720*100;
-  docEl.style.fontSize = rootSize + 'px';
-}
-window.onload = function() {
-    refreshRem();
-}
-
-</script>
 </html>
