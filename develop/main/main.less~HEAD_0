@@ -4,6 +4,7 @@ html,body {
   height: 100%;
   padding: 0;
   line-height: 1;
+<<<<<<< HEAD:develop/main/main.less~HEAD_0
   background: url('/static/img/background.png');
   background-repeat: repeat-y;
   font-family: "微软雅黑";
@@ -35,6 +36,12 @@ html,body {
     color: #04be02;
     border: 1px solid #04be02;
 }
+=======
+  background: url('background.png');
+  background-repeat: repeat-y;
+  font-family: "微软雅黑";
+}
+>>>>>>> parent of 6e628d4... push code:static/css/main.css
 p {
   margin: 0;
   padding: 0;
@@ -62,7 +69,11 @@ h1 {
   overflow-y: scroll;
   width: 100%;
 }
+<<<<<<< HEAD:develop/main/main.less~HEAD_0
 .main.pre_index .main-body {
+=======
+.main-body {
+>>>>>>> parent of 6e628d4... push code:static/css/main.css
   padding-left: 0.3rem;
   padding-right: 0.3rem;
 }
@@ -112,7 +123,11 @@ h1 {
 }
 .in.left .bracket {
   padding-right: 0.1rem;
+<<<<<<< HEAD:develop/main/main.less~HEAD_0
   background: url("/static/img/left.png");
+=======
+  background: url("left.png");
+>>>>>>> parent of 6e628d4... push code:static/css/main.css
   width: 12px;
   height: 12px;
   background-size: contain;
@@ -121,7 +136,11 @@ h1 {
 }
 .in.right .bracket {
   padding-left: 0.1rem;
+<<<<<<< HEAD:develop/main/main.less~HEAD_0
   background: url("/static/img/right.png");
+=======
+  background: url("right.png");
+>>>>>>> parent of 6e628d4... push code:static/css/main.css
   width: 12px;
   height: 12px;
   background-size: contain;
@@ -287,7 +306,11 @@ h1 {
   width: 0.6rem;
   height: 0.6rem;
 }
+<<<<<<< HEAD:develop/main/main.less~HEAD_0
 .main.pre_index .product_company .company_text {
+=======
+.product_company .company_text {
+>>>>>>> parent of 6e628d4... push code:static/css/main.css
   font-size: 0.26rem;
   color: #fff;
   position: absolute;
@@ -300,7 +323,11 @@ h1 {
   right: 0.3rem;
   height: 0.98rem;
   width: 0.2rem;
+<<<<<<< HEAD:develop/main/main.less~HEAD_0
   background: url('/static/img/arrow.png');
+=======
+  background: url('arrow.png');
+>>>>>>> parent of 6e628d4... push code:static/css/main.css
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -437,15 +464,27 @@ h1 {
   display: inline-block;
 }
 .footer .haha {
+<<<<<<< HEAD:develop/main/main.less~HEAD_0
     position: absolute;
     top: 50%;
     background: url('/static/img/u215.png');
+=======
+  box-sizing: border-box;
+    /* position: relative; */
+    top: 50%;
+    transform: translateY(-50%);
+    height: 0.5rem;
+    /* position: relative; */
+    background: url('u215.png');
+    /* height: 100%; */
+>>>>>>> parent of 6e628d4... push code:static/css/main.css
     width: 25%;
     background-repeat: no-repeat;
     background-size: contain;
     transform: translateY(-50%);
     background-position: center;
     background-size: contain;
+<<<<<<< HEAD:develop/main/main.less~HEAD_0
     height: 0.5rem;
     width: 0.5rem;
     left: 0.5rem;
@@ -453,10 +492,27 @@ h1 {
 }
 .footer .haha .tip {
   position: absolute;
+=======
+
+
+  margin-top: -0.1rem;
+  height: 0.5rem;
+  /*position: relative;*/
+  /*height: 100%;*/
+  /*width: 25%;
+  background: url('u215.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;*/
+}
+.footer .haha .tip {
+  /*position: absolute;*/
+>>>>>>> parent of 6e628d4... push code:static/css/main.css
   width: 0.34rem;
   height: 0.34rem;
   background-color: red;
   border-radius: 50%;
+<<<<<<< HEAD:develop/main/main.less~HEAD_0
   left: 15px;
   color: #fff;
   font-size: 0.2rem;
@@ -472,6 +528,18 @@ h1 {
   position: absolute;
   top: 50%;
   right: 0.4rem;
+=======
+  margin-left: 1rem;
+  color: #fff;
+  font-size: 0.2rem;
+  text-align: center;
+  margin-top: -0.1rem;
+}
+.footer .buttonArea {
+  box-sizing: border-box;
+  position: relative;
+  top: 50%;
+>>>>>>> parent of 6e628d4... push code:static/css/main.css
   transform: translateY(-50%);
 }
 .footer .buttonArea .weui_btn_mini {
@@ -482,12 +550,22 @@ h1 {
   margin: 0;
   margin-right: 0.1rem;
 }
+<<<<<<< HEAD:develop/main/main.less~HEAD_0
 .weui_btn_mini.purchase_to_order {
   background-color: #ffb400;
   color: #000;
   border: none;
 }
 .weui_btn_mini.add_to_cart {
+=======
+.weui_btn_mini.purchase {
+  background-color: #ffb400;
+  color: #000;
+  border: none;
+  border-radius: 10%;
+}
+.weui_btn_mini.add {
+>>>>>>> parent of 6e628d4... push code:static/css/main.css
   border: 1px solid #ffb400;
   color: #ffb400;
 }

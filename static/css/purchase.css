@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .main-body {
   padding: 0;
 }
@@ -401,6 +402,8 @@
   display: none;
 }
 =======
+=======
+>>>>>>> parent of 6e628d4... push code
 .main-body {
   padding: 0;
 }
@@ -431,7 +434,11 @@
   height: 0.6rem;
   line-height: 0.6rem;
 }
+<<<<<<< HEAD
 .main.make_order .order.comment input {
+=======
+.order.comment input {
+>>>>>>> parent of 6e628d4... push code
   width: 5.7rem;
   height: 0.6rem;
   margin-left: 0.3rem;
@@ -819,7 +826,10 @@
 .weui_dialog {
   font-size: 0.18rem;
 }
+<<<<<<< HEAD
 .hide {
   display: none;
 }
 >>>>>>> ee385445ab427312aa351d9f369c26eccfba2f5a
+=======
+>>>>>>> parent of 6e628d4... push code

@@ -95,7 +95,7 @@
   width: 0.3rem;
 }
 
-.pre_index.order-footer {
+.order-footer {
   font-size:14px;
   /*width: 100%;*/
   height: 1.2rem;
@@ -105,19 +105,13 @@
   padding-top: 0.05rem;
   box-sizing: border-box;
 }
-.main.pre_index .order-footer.order-detail-footer {
-  height: auto;
-  border-radius: 0 0 0 0;
+.order-footer.order-detail-footer {
   display: block;
   width: 100%;
   text-align: center;
   line-height: 1.2rem;
   color:#000;
   background-color: #ffb400;
-}
-.main.pre_index .order-footer {
-  position: relative;
-  bottom: 0;
 }
 .order-footer .choose {
   color: #fff;

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
   <title>bangbang</title>
+<<<<<<< HEAD
   <link rel="stylesheet" href="/static/css/weui.min.css">
 <<<<<<< HEAD
   <link rel="stylesheet" href="/static/css/main-7894cecf29.css">
@@ -11,63 +12,164 @@
   <link rel="stylesheet" href="/static/css/main.css">
 >>>>>>> ee385445ab427312aa351d9f369c26eccfba2f5a
   <link rel="stylesheet" href="/static/css/purchase.css">
+=======
+  <link rel="stylesheet" href="weui.min.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="purchase.css">
+>>>>>>> parent of 6e628d4... push code
   <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
- 
-
-</body>
-<script type="text/x-handlebars-template" id="purchase-template">
-  {{#each res}}
-
-    <div class="order" data-cart="{{this.cart_id}}" data-seed="{{this.seed_id}}" data-total="{{this.total_price}}">
-      <div class="order-inner vertical-middle">
-        <div class="">
-          <!-- <input type="checkbox" name="" id=""> -->
-          <div class="checkbox checksimple">
-            <img src="" alt="" />
+  <div class="main">
+    <div class="header-bar">
+      <!-- <div class="header_inner"> -->
+      <div class="back"><a href="index.html"><img src="back.png" alt="" /></a></div>
+      <div class="function">sda</div>
+      <div class="title">购物袋</div>
+      <!-- </div> -->
+    </div>
+    <div class="main-body">
+      <div class="order">
+        <div class="order-inner vertical-middle">
+          <div class="">
+            <!-- <input type="checkbox" name="" id=""> -->
+            <div class="checkbox checksimple">
+              <img src="check.png" alt="" />
+            </div>
+            <!-- <input type="checkbox" name="" id=""> -->
           </div>
-          <!-- <input type="checkbox" name="" id=""> -->
+          <div class="order-img">
+            <img src="" alt="" />
+            <!-- <input type="checkbox" name="" id=""> -->
+          </div>
+          <div class="order-detail">
+            <p>
+              G-STEP冬季卫衣
+            </p>
+            <p class="detail">
+              <span>颜色：灰色 </span><span> 尺码： XL</span>
+            </p>
+          </div>
+          <div class="price vertical-middle">
+            <p>
+              ￥495.0
+            </p>
+            <p>
+              ×1
+            </p>
+            <p class="close_order">
+              <img src="close.png" alt="" />
+            </p>
+          </div>
         </div>
-        <div class="order-img">
-          <img src="" alt="" />
-          <!-- <input type="checkbox" name="" id=""> -->
+
+      </div>
+      <div class="order">
+        <div class="order-inner vertical-middle">
+          <div class="">
+            <!-- <input type="checkbox" name="" id=""> -->
+            <div class="checkbox checksimple">
+              <img src="check.png" alt="" />
+            </div>
+            <!-- <input type="checkbox" name="" id=""> -->
+          </div>
+          <div class="order-img">
+            <img src="" alt="" />
+            <!-- <input type="checkbox" name="" id=""> -->
+          </div>
+          <div class="order-detail">
+            <p>
+              G-STEP冬季卫衣
+            </p>
+            <p class="detail">
+              <span>颜色：灰色 </span><span> 尺码： XL</span>
+            </p>
+          </div>
+          <div class="price vertical-middle">
+            <p>
+              ￥495.0
+            </p>
+            <p>
+              ×1
+            </p>
+            <p class="close_order">
+              <img src="close.png" alt="" />
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="order-footer">
+      <div class="order-inner vertical-middle">
+        <div class="choose">
+          <!-- <input type="checkbox" name="" id=""> <span>全选</span> -->
+          <div class="checkbox checkall"><img src="" alt="" /></div><span>全选</span>
         </div>
         <div class="order-detail">
-          <p>
-            G-STEP冬季卫衣
-          </p>
-          <p class="detail">
-            {{#each this.properties}}
-              <span>{{this.name}}: {{this.type}}</span>
-            {{/each}}
-          </p>
+
         </div>
         <div class="price vertical-middle">
-          <p>
-            ￥{{this.price}}
-          </p>
-          <p>
-            ×{{this.count}}
-          </p>
-          <p class="close_order">
-            <img src="/static/img/close.png" alt="" />
-          </p>
+          <div class="price-detail">
+            <p>
+              合计：￥400
+            </p>
+            <p class="detail">
+              已选1件 不包含运费
+            </p>
+          </div>
+          <div class="">
+            <a href="make_order.html" class="weui_btn weui_btn_mini weui_btn_plain_primary purchase">立即购买</a>
+          </div>
+
         </div>
       </div>
 
     </div>
+    <div class="weui_dialog_confirm" id="dialog1" style="display: none;">
+      <div class="weui_mask"></div>
+      <div class="weui_dialog">
+          <div class="weui_dialog_hd"><strong class="weui_dialog_title">弹窗标题</strong></div>
+          <div class="weui_dialog_bd">自定义弹窗内容，居左对齐显示，告知需要确认的信息等</div>
+          <div class="weui_dialog_ft">
+              <a href="javascript:;" class="weui_btn_dialog default">取消</a>
+              <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
+          </div>
+      </div>
+  </div>
+  </div>
 
-  {{/each}}
-  
-</script>
-
-<script src="/static/js/handlebars.min.js"></script>
-<script src="/static/js/common.js"></script>
+</body>
 <script type="text/javascript">
+function refreshRem(){
+  var docEl = window.document.documentElement;
+  var width = docEl.getBoundingClientRect().width;
+  var rootSize = width/720*100;
+  docEl.style.fontSize = rootSize + 'px';
+}
 window.onload = function() {
   refreshRem();
+  $('.main').on('click', '.close_order', function () {
+    $('#dialog1').show().on('click', '.weui_btn_dialog', function () {
+      $('#dialog1').off('click').hide();
+    });
+  })
+  $(".checkbox").on("click", function() {
+    if ($(this).find("img").attr("src") === "") {
+      $(this).find("img").attr("src", "check.png");
+      if ($(this).hasClass("checkall")) {
+        $(".checksimple").find("img").attr("src", "check.png");
+      } else {
+      }
+    } else {
+      $(this).find("img").attr("src", "");
+      if ($(this).hasClass("checkall")) {
+        $(".checksimple").find("img").attr("src", "");
+      } else {
+        $(".checkall").find("img").attr("src", "");
+      }
+    }
+  })
 }
 </script>
-<script src="/static/js/purchase.js"></script>
 </html>
