@@ -1,0 +1,10 @@
+{
+    "type": "sftp",
+    "host": "180.76.156.27",
+    "username": "ui",
+    "password": "gsteps2016!",
+    "port": 22,
+    "remotePath": "/home/ui/preseller_ui",
+    "uploadOnSave": true,
+    "uploadConfigFile": true
+}
