@@ -6,7 +6,7 @@ $(document).ready(function() {
   var commodity_tml = gstep.templates.commodity;
   var purchase_tml = gstep.templates.purchase_detail;
   var purchasecart_tml = gstep.templates.purchase;
-  
+
   pre_index.on("click", ".product_company", function() {
     window.location.href = "introduction.html"
   });
@@ -35,8 +35,8 @@ $(document).ready(function() {
     var calcLine = calWidthForSubheading - in_left_bracket[0].offsetWidth;
     in_left.width(calWidthForSubheading - 2 + "px");
     in_right.width(calWidthForSubheading - 2 + "px");
-    in_left_line.width(calcLine - 3);
-    in_right_line.width(calcLine - 3);
+    in_left_line.width(calcLine - 8);
+    in_right_line.width(calcLine - 8);
   })
 
   // 显示购物车详情
@@ -136,10 +136,10 @@ $(document).ready(function() {
   }
   pre_index.on("click", ".show_detail", function() {
     var $this = $(this);
-    
+
     $this.parents(".buttton_active").hide();
     var product_detail = pre_index.find(".product_detail");
-    
+
     if (!detail_loaded) {
       detail_loaded = true;
       ajax_func({
